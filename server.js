@@ -11,8 +11,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Define express routes
-app.get("/test", (req, res) => {
-    return res.send("Hello world!");
+
+// Root
+app.get("/", (req, res) => {
+    return res.send(path.join(__dirname, "/public/index.html"));
 });
 
 // Start the express server
