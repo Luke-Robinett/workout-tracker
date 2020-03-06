@@ -43,6 +43,17 @@ app.get("/api/workouts", (req, res) => {
         });
 });
 
+app.get("/api/workouts/:id", (req, res) => {
+    // Searches for a workout by ID
+    db.Workout.findOne({ _id: req.params.id })
+        .then(result => {
+            res.json(result);
+        })
+        .catch(err => {
+            console.log(err.message);
+        });
+});
+
 // Start the express server
 app.listen({ port: PORT }, err => {
     if (err) {
