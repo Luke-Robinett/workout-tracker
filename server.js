@@ -38,7 +38,7 @@ app.get("/api/workouts/range", (req, res) => {
         .then(result => {
             res.json(result);
         })
-        .catch({ message } => {
+        .catch(({ message }) => {
             console.log(message);
         });
 });
@@ -49,7 +49,7 @@ app.get("/api/workouts", (req, res) => {
         .then(result => {
             res.json(result);
         })
-        .catch({ message } => {
+        .catch(({ message }) => {
             console.log(message);
         });
 });
@@ -60,7 +60,7 @@ app.post("/api/workouts", (req, res) => {
         .then(result => {
             res.json(result);
         })
-        .catch({ message } => {
+        .catch(({ message }) => {
             console.log(message);
         });
 });
@@ -71,7 +71,7 @@ app.put("/api/workouts/:id", (req, res) => {
         .then(result => {
             res.json(result);
         })
-        .catch({ message } => {
+        .catch(({ message }) => {
             console.log(message);
         });
 });
