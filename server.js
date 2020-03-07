@@ -38,19 +38,19 @@ app.get("/api/workouts", (req, res) => {
         .then(result => {
             res.json(result);
         })
-        .catch(err => {
-            console.log(err.message);
+        .catch({message} => {
+            console.log(message);
         });
 });
 
-app.get("/api/workouts/:id", (req, res) => {
-    // Searches for a workout by ID
-    db.Workout.findOne({ _id: req.params.id })
+app.put("/api/workouts/:id", (req, res) => {
+    // Updates the specified workout
+    db.Workout.findByIdAndUpdate(req.params.id, req.body)
         .then(result => {
             res.json(result);
         })
-        .catch(err => {
-            console.log(err.message);
+        .catch({message} => {
+            console.log(message);
         });
 });
 
